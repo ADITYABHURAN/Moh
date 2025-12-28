@@ -1,0 +1,92 @@
+<div class="patient-card">
+  <div class="card-content">
+    <!-- Left: Avatar -->
+    <div class="patient-avatar">
+      <img [src]="patient.avatarUrl" [alt]="patient.firstName + ' ' + patient.lastName">
+    </div>
+
+    <!-- Center: Patient Information -->
+    <div class="patient-info">
+      <h3 class="patient-name">{{ patient.firstName }} {{ patient.lastName }}</h3>
+      
+      <div class="info-grid">
+        <div class="info-row">
+          <span class="label">DOB</span>
+          <span class="value">{{ patient.dateOfBirth }}</span>
+        </div>
+        
+        <div class="info-row">
+          <span class="label">Sex</span>
+          <span class="value">{{ patient.sex }}</span>
+        </div>
+        
+        <div class="info-row">
+          <span class="label">Residence</span>
+          <span class="value">{{ patient.residence }}</span>
+        </div>
+        
+        <div class="info-row">
+          <span class="label">MRN</span>
+          <span class="value">{{ patient.mrn }}</span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">ID Number</span>
+          <span class="value">{{ patient.idNumber }}</span>
+        </div>
+        
+        <div class="info-row">
+          <span class="label">Last 4 Digits of SSN</span>
+          <span class="value">{{ patient.lastFourSSN }}</span>
+        </div>
+        
+        <div class="info-row">
+          <span class="label">Phone Number</span>
+          <span class="value">{{ patient.phoneNumber }}</span>
+        </div>
+        
+        <div class="info-row">
+          <span class="label">Email Address</span>
+          <span class="value">{{ patient.emailAddress }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Medical Information -->
+    <div class="medical-info">
+      <div class="appointment-header">
+        <span class="appointment-label">Next Appointment</span>
+        <span class="appointment-time">{{ patient.nextAppointment.date }} {{ patient.nextAppointment.time }}</span>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-row">
+          <span class="label">Hospital</span>
+          <span class="value">{{ patient.hospital }}</span>
+        </div>
+        
+        <div class="info-row">
+          <span class="label">Dept.</span>
+          <span class="value">{{ patient.department }}</span>
+        </div>
+        
+        <div class="info-row">
+          <span class="label">Physician</span>
+          <span class="value">{{ patient.physician }}</span>
+        </div>
+        
+        <div class="info-row">
+          <span class="label">Conditions</span>
+          <span class="value">{{ patient.conditions }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arrow Icon -->
+    <div class="arrow-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </div>
+  </div>
+</div>

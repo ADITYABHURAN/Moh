@@ -1,0 +1,122 @@
+<div class="dashboard-container">
+  <!-- Header -->
+  <header class="dashboard-header">
+    <h1 class="greeting">Hello, Dr. Noori!</h1>
+  </header>
+
+  <!-- Search Section -->
+  <section class="search-section">
+    <div class="search-header">
+      <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+      <h2>Search your patients</h2>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button 
+        class="tab" 
+        [class.active]="activeTab === 'basic'"
+        (click)="setActiveTab('basic')">
+        Basic
+      </button>
+      <button 
+        class="tab" 
+        [class.active]="activeTab === 'advanced'"
+        (click)="setActiveTab('advanced')">
+        Advanced
+      </button>
+    </div>
+
+    <!-- Search Form -->
+    <form [formGroup]="searchForm" (ngSubmit)="onSearch()" class="search-form">
+      <div class="form-section">
+        <h3 class="section-title">Patient Info</h3>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="firstName">First Name</label>
+            <input 
+              type="text" 
+              id="firstName" 
+              formControlName="firstName"
+              placeholder="Miguel">
+          </div>
+          <div class="form-field">
+            <label for="lastName">Last Name</label>
+            <input 
+              type="text" 
+              id="lastName" 
+              formControlName="lastName"
+              placeholder="Herrera">
+          </div>
+          <div class="form-field">
+            <label for="dateOfBirth">Date of Birth</label>
+            <input 
+              type="date" 
+              id="dateOfBirth" 
+              formControlName="dateOfBirth"
+              placeholder="07/02/1958">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 class="section-title">Appointment Range</h3>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="startDate">Start Date</label>
+            <input 
+              type="date" 
+              id="startDate" 
+              formControlName="startDate"
+              placeholder="mm/dd/yyyy">
+          </div>
+          <div class="form-field">
+            <label for="endDate">End Date</label>
+            <input 
+              type="date" 
+              id="endDate" 
+              formControlName="endDate"
+              placeholder="mm/dd/yyyy">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="search-button">Search</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Patients Section -->
+  <section class="patients-section">
+    <div class="section-tabs">
+      <button class="section-tab active">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        Today's patients
+      </button>
+      <button class="section-tab">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        Search results
+      </button>
+    </div>
+
+    <!-- Patient Cards -->
+    <div class="patients-list">
+      <app-patient-card 
+        *ngFor="let patient of patients" 
+        [patient]="patient">
+      </app-patient-card>
+    </div>
+  </section>
+</div>
