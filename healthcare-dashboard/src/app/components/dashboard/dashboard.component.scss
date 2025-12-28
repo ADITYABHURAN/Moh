@@ -200,7 +200,6 @@
     overflow-y: auto;
     padding-right: 8px;
 
-    /* Custom scrollbar */
     &::-webkit-scrollbar {
       width: 8px;
     }
@@ -221,7 +220,6 @@
   }
 }
 
-// Tablet responsiveness
 @media (max-width: 1024px) {
   .dashboard-container {
     padding: 24px 16px;
@@ -238,7 +236,6 @@
   }
 }
 
-// Mobile responsiveness
 @media (max-width: 768px) {
   .dashboard-container {
     padding: 16px;

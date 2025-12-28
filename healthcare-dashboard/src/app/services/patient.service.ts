@@ -2,10 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Patient } from '../models/patient.model';
 
-/**
- * Service for managing patient data
- * In a real application, this would make HTTP calls to a backend API
- */
 @Injectable({
   providedIn: 'root'
 })
@@ -146,25 +142,11 @@ export class PatientService {
     }
   ];
 
-  constructor() { }
-
-  /**
-   * Get all patients
-   * @returns Observable of Patient array
-   */
   getPatients(): Observable<Patient[]> {
     return of(this.mockPatients);
   }
 
-  /**
-   * Search patients by criteria
-   * In a real app, this would filter based on the search parameters
-   * @param searchCriteria Search parameters
-   * @returns Observable of filtered Patient array
-   */
   searchPatients(searchCriteria: any): Observable<Patient[]> {
-    // For now, just return all patients
-    // In a real implementation, you would filter based on criteria
     return of(this.mockPatients);
   }
 }

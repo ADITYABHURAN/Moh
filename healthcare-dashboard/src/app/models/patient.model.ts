@@ -1,6 +1,3 @@
-/**
- * Patient model interface representing a healthcare patient's information
- */
 export interface Patient {
   id: string;
   firstName: string;
@@ -9,7 +6,7 @@ export interface Patient {
   dateOfBirth: string;
   sex: 'Male' | 'Female';
   residence: string;
-  mrn: string; // Medical Record Number
+  mrn: string;
   idNumber: string;
   lastFourSSN: string;
   phoneNumber: string;
@@ -19,7 +16,7 @@ export interface Patient {
   physician: string;
   conditions: string;
   nextAppointment: {
-    date: string; // e.g., "Today"
-    time: string; // e.g., "9:00 am"
+    date: string;
+    time: string;
   };
 }
